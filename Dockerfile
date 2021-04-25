@@ -1,7 +1,7 @@
 # Version JDK8
 
 FROM centos:7
-MAINTAINER Gaurav Agarwal, bharatmicrosystems@gmail.com
+MAINTAINER Sricharan Koyalkar
 
 RUN yum install -y java-1.8.0-openjdk-devel wget git maven
 
@@ -23,9 +23,9 @@ RUN chmod g+rwx /opt/tomcat/bin
 RUN chmod g+r /opt/tomcat/bin/*
 
 RUN rm -rf /opt/tomcat/webapps/*
-RUN cd /tmp && git clone https://github.com/CharanKoyalkar484/MyApp-Java-project.git
-RUN cd /tmp/java-mvn-hello-world-web-app && mvn clean install
-RUN cp /tmp/java-mvn-hello-world-web-app/target/mvn-hello-world.war /opt/tomcat/webapps/ROOT.war
+RUN cd /tmp && git clone https://github.com/sricharankoyalkar/spring-mvc-login.git
+RUN cd /tmp/spring-mvc-login && mvn clean install
+RUN cp /tmp/spring-mvc-login/target/login-1.0.war /opt/tomcat/webapps/ROOT.war
 RUN chmod 777 /opt/tomcat/webapps/ROOT.war
 
 VOLUME /opt/tomcat/webapps
