@@ -25,7 +25,7 @@ RUN chmod g+r /opt/tomcat/bin/*
 RUN rm -rf /opt/tomcat/webapps/*
 RUN cd /tmp && git clone https://github.com/sricharankoyalkar/spring-mvc-login.git
 RUN cd /tmp/spring-mvc-login && mvn clean install
-RUN cp /tmp/spring-mvc-login/target/login-1.0.war /opt/tomcat/webapps/ROOT.war
+RUN cp /tmp/spring-mvc-login/target/login.war /opt/tomcat/webapps/ROOT.war
 RUN chmod 777 /opt/tomcat/webapps/ROOT.war
 
 VOLUME /opt/tomcat/webapps
