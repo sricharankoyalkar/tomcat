@@ -11,8 +11,8 @@ RUN mkdir /opt/tomcat
 RUN useradd -s /bin/nologin -g tomcat -d /opt/tomcat tomcat
 
 # Download and install tomcat
-RUN wget https://mirrors.estointernet.in/apache/tomcat/tomcat-8/v8.5.65/bin/apache-tomcat-8.5.65.tar.gz
-RUN tar -zxvf apache-tomcat-8.5.65.tar.gz -C /opt/tomcat --strip-components=1
+RUN wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.2/bin/apache-tomcat-10.1.2.tar.gz
+RUN tar -zxvf apache-tomcat-10.1.2.tar.gz -C /opt/tomcat --strip-components=1
 RUN chgrp -R tomcat /opt/tomcat/conf
 RUN chmod g+rwx /opt/tomcat/conf
 RUN chmod g+r /opt/tomcat/conf/*
